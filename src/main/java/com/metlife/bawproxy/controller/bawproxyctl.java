@@ -27,7 +27,7 @@ import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBo
 @RestController
 public class bawproxyctl {
     
-    @GetMapping(path="/getContent/{id}", consumes="text/plain", produces="application/octet-stream")
+    @GetMapping(path="/getContent/{id}", consumes="*/*", produces="application/octet-stream")
     @ResponseBody
     public ResponseEntity<StreamingResponseBody> getContent(@PathVariable int id)
     {
