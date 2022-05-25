@@ -25,7 +25,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
 
 @RestController
-public class bawproxyctl {
+public class bawproxyctl 
+{
     
     @GetMapping(path="/getContent/{id}", consumes="*/*", produces="application/octet-stream")
     @ResponseBody
@@ -99,6 +100,13 @@ public class bawproxyctl {
         return rspe;
 
 
+    }
+
+    @GetMapping(path="/getHello/{name}", consumes="*/*", produces="text/plain")
+    @ResponseBody
+    public String getHello(@PathVariable String name)
+    {
+        return "Hello " + name;
     }
 
 }
